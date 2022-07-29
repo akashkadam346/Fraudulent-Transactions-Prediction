@@ -27,7 +27,16 @@ In recent times, the number of fraud transactions has increased drastically, due
 
 • isFlaggedFraud - The business model aims to control massive transfers from one account to another and flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000 in a single transaction.
 
+![image](https://user-images.githubusercontent.com/103564871/181810444-67f25fe3-9f0c-4128-9244-d5f5fc800a58.png)
+
+# EDA/DATA VISUALIZATION
+NULL VALUES AND DUPLICATE VALUES: 
+There is no null values and no duplicate values present in dataset. Hence, Dataset is cleaned,but we still need to perform data analysis since the data contains huge variations in the value in different columns. Normalization will also improve the overall accuracy of the machine learning model.
+![image](https://user-images.githubusercontent.com/103564871/181812152-474289ab-e42a-47b1-9002-69ad929996d5.png)
+![image](https://user-images.githubusercontent.com/103564871/181812174-2ea69127-4383-4b7c-8dca-57042bdd3b9a.png)
+
+# Relation between the Fraud Transaction and the Transactions Flagged by the system
+![image](https://user-images.githubusercontent.com/103564871/181812310-261fbadd-a313-4d72-b60a-f1966ea081c2.png)
 
 
-We are presented with a labeled dataset of financial transactions, some of which are fraudulent. We will be performing exploratory data analysis on this data, and then creating a classifier model to predict whether a transaction is fraudulent given the included features. The objective of this project is to explain my thought processes in solving this problem, as well as addressing some of the issues that inherently face machine learning models. ("All models are wrong, but some are useful.") Using this notebook, I hope to focus primarily on transparency and clarity rather than raw predictive performance, and readability for an audience without a specialization in data science.
 
