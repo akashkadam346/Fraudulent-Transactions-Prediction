@@ -38,5 +38,48 @@ There is no null values and no duplicate values present in dataset. Hence, Datas
 # Relation between the Fraud Transaction and the Transactions Flagged by the system
 ![image](https://user-images.githubusercontent.com/103564871/181812310-261fbadd-a313-4d72-b60a-f1966ea081c2.png)
 
+# Fraud Transactions and Transaction types
+INFERENCES:
+From the above graph we can see that the Fraudulent transfers are from TRANSFER(4097) and CASH_OUT(4116), transaction types.
+![image](https://user-images.githubusercontent.com/103564871/181812542-40b4d679-6437-4001-b08c-8c3057113204.png)
+
+# Flagged As Fraud per transaction
+Inferences:
+From the above graph we can see that the money transfers that are flagged fraud are from TRANSFER Transaction type. So out of 4097 only 16 were Flagged Fraud by the system.
+However, only 16 out of 6 million transactions were flagged by the system. It is safe to say that the system uses an unreasonable parameter to detect fraud transactions.
+
+![image](https://user-images.githubusercontent.com/103564871/181812827-323b6be1-eb1c-4861-91ba-b29dc8250a3c.png)
+
+# Data Cleaning
+
+As We know Dataset is totally Biased, 8231 are fraud transactions(minority class) where as remaining are non fraud transactions(majority class). However We are trying to make content small so that we could balanced the dataset. Hence we are going to take 12000 data from each type(Payment, Transfer, Cash_out, Debit ,Cash_in) which is non fraud and will make one dataframe of fraud data i.e. 8231 and we will combine all the dataframe to perform further steps.
+
+We do not get any beneficial information from the nameOrig or nameDest, so we'll be dropping these columns.
+
+# Feature Engineering
+
+Taking note of the balances before and after transactions
+As most of the transactions has errors in showing the account balances before and after transaction, we calculate the error:
+
+Number of transactions where oldbalanceorig & newbalanceorig is zero but amount of transaction is not zero : 17098
+Number of recipients who have newbalanceDest and oldbalanceDest is zero: 16831 
+
+
+Taking note of the balances before and after transactions
+As most of the transactions has errors in showing the account balances before and after transaction, we calculate the error by adding two columns 'origin_bal_change’ and 'dest_bal_increase’
+'origin_bal_change' = 'oldbalanceOrg'] - 'newbalanceOrig'
+'dest_bal_increase' = 'newbalanceDest' - 'oldbalanceDest'
+
+# Heat Map
+![image](https://user-images.githubusercontent.com/103564871/181813621-29269533-b80c-47d5-8a31-0d5c7b2f81a4.png)
+
+
+
+
+
+
+
+
+
 
 
