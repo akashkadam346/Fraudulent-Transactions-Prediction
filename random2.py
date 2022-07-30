@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import json
 import requests as re
-from sklearn.model_selection import KFold
+
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 import pickle
