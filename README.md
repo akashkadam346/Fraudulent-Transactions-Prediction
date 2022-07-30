@@ -27,34 +27,27 @@ In recent times, the number of fraud transactions has increased drastically, due
 
 • isFlaggedFraud - The business model aims to control massive transfers from one account to another and flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000 in a single transaction.
 
-![image](https://user-images.githubusercontent.com/103564871/181810444-67f25fe3-9f0c-4128-9244-d5f5fc800a58.png)
+
 
 # EDA/DATA VISUALIZATION
 NULL VALUES AND DUPLICATE VALUES: 
 There is no null values and no duplicate values present in dataset. Hence, Dataset is cleaned,but we still need to perform data analysis since the data contains huge variations in the value in different columns. Normalization will also improve the overall accuracy of the machine learning model.
-![image](https://user-images.githubusercontent.com/103564871/181812152-474289ab-e42a-47b1-9002-69ad929996d5.png)
-![image](https://user-images.githubusercontent.com/103564871/181812174-2ea69127-4383-4b7c-8dca-57042bdd3b9a.png)
 
-# Relation between the Fraud Transaction and the Transactions Flagged by the system
-![image](https://user-images.githubusercontent.com/103564871/181812310-261fbadd-a313-4d72-b60a-f1966ea081c2.png)
 
 # Fraud Transactions and Transaction types
 INFERENCES:
-From the above graph we can see that the Fraudulent transfers are from TRANSFER(4097) and CASH_OUT(4116), transaction types.
-![image](https://user-images.githubusercontent.com/103564871/181812542-40b4d679-6437-4001-b08c-8c3057113204.png)
+we found out that the Fraudulent transfers are from TRANSFER(4097) and CASH_OUT(4116), transaction types.
+
 
 # Flagged As Fraud per transaction
 Inferences:
 From the above graph we can see that the money transfers that are flagged fraud are from TRANSFER Transaction type. So out of 4097 only 16 were Flagged Fraud by the system.
 However, only 16 out of 6 million transactions were flagged by the system. It is safe to say that the system uses an unreasonable parameter to detect fraud transactions.
 
-![image](https://user-images.githubusercontent.com/103564871/181812827-323b6be1-eb1c-4861-91ba-b29dc8250a3c.png)
 
 # DATASET ANALYSIS
 The target feature is isFraud which is binary feature with 0(NON FRAUD) and 1 (FRAUD). There are 63,54,407 NON-FRAUD TRANSACTIONS (99.88%) and  8213 FRAUDULENT TRANSACTIONS (0.13%)
 As expected, most transactions are non-fraudulent. The following visualization underlines this significant contrast.
-![image](https://user-images.githubusercontent.com/103564871/181835189-d9fa30d2-6970-43a6-bbd7-5c22d9430ba5.png)
-
 
 # Data Cleaning
 
@@ -78,11 +71,7 @@ As most of the transactions has errors in showing the account balances before an
 
 # Heat Map
 Finally, it would be interesting to know if there are any significant correlations between our predictors, especially with regards to our class variable (isFraud). One of the most visually appealing ways to determine that is by using a heatmap
-
-
 It turned out that the features with positive correlation are amount, type, And the negative correlation are: All the other features.
-
-![image](https://user-images.githubusercontent.com/103564871/181813621-29269533-b80c-47d5-8a31-0d5c7b2f81a4.png)
 
 # DATA PREPROCESSING
 We have used the 68231 dataset  (unbalanced). We have split dataset into two dataset: Train and Test. The ratio of splitting was 80 x 20. 
@@ -91,7 +80,6 @@ Shape of train: 54,570
 Shape of test: 13,643
 We have trained and tested each model and recorded the results Accuracy!
 
-![image](https://user-images.githubusercontent.com/103564871/181835656-01cf69fb-5ca5-47cb-bf0e-ca0a11057492.png)
 
 # RANDOM OVERSAMPLING
 
@@ -103,13 +91,6 @@ Shape of dataset after resampling : 1,20,00
 The Shape of Train and Test splitting:
 Shape of Train: 84,000
 Shape of Test: 36,000
-
-![image](https://user-images.githubusercontent.com/103564871/181835908-93ca212a-9128-4690-9305-26061a35ac94.png)
-
-# We have trained and tested each model and recorded the results Accuracy:
-![image](https://user-images.githubusercontent.com/103564871/181836441-40fa3c5f-c098-4305-9783-366d9152a19e.png)
-From above Accuracy Comparison, We got good accuracy in all Algorithms except Logistic Regression, Gaussian Naïve Bayes, K-Fold Cross Validation.
-As RANDOM FOREST accuracy is very close to 100% however we finalized random forest as our Final Model.
 
 # DEPLOYMENT IS DONE IN Streamlit
 ![image](https://user-images.githubusercontent.com/103564871/181836639-8854c631-6f0d-4b47-a46b-979e269ffd22.png)
