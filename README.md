@@ -53,7 +53,6 @@ As expected, most transactions are non-fraudulent. The following visualization u
 
 As We know Dataset is totally Biased, 8231 are fraud transactions(minority class) where as remaining are non fraud transactions(majority class). However We are trying to make content small so that we could balanced the dataset. Hence we are going to take 12000 data from each type(Payment, Transfer, Cash_out, Debit ,Cash_in) which is non fraud and will make one dataframe of fraud data i.e. 8231 and we will combine all the dataframe to perform further steps.
 
-We do not get any beneficial information from the nameOrig or nameDest, so we'll be dropping these columns.
 
 # Feature Engineering
 
@@ -69,28 +68,10 @@ As most of the transactions has errors in showing the account balances before an
 'origin_bal_change' = 'oldbalanceOrg'] - 'newbalanceOrig'
 'dest_bal_increase' = 'newbalanceDest' - 'oldbalanceDest'
 
-# Heat Map
-Finally, it would be interesting to know if there are any significant correlations between our predictors, especially with regards to our class variable (isFraud). One of the most visually appealing ways to determine that is by using a heatmap
-It turned out that the features with positive correlation are amount, type, And the negative correlation are: All the other features.
-
-# DATA PREPROCESSING
-We have used the 68231 dataset  (unbalanced). We have split dataset into two dataset: Train and Test. The ratio of splitting was 80 x 20. 
-The shape of train and test splitting:
-Shape of train: 54,570
-Shape of test: 13,643
-We have trained and tested each model and recorded the results Accuracy!
-
-
 # RANDOM OVERSAMPLING
 
 This dataset is severely imbalanced (most of the transactions are non-fraud). So the algorithms are much more likely to classify new observations to the majority class and high accuracy won't tell us anything. To address the problem of imbalanced dataset we can use oversampling data approach techniques. Oversampling increases the number of minority class members in the training set. The advantage of oversampling is that no information from the original training set is lost, as all observations from the minority and majority classes are kept. 
 We have balanced the dataset using RANDOM OVERSAMPLING technique. The class feature (isFraud) now is balanced (50% for fraud transaction and 50% for non-fraud transaction) as in figure below. Then we have split the dataset into two  dataset: Training dataset and Testing dataset. The ratio of splitting was (70x30).
-
-Shape of dataset after resampling : 1,20,00
-
-The Shape of Train and Test splitting:
-Shape of Train: 84,000
-Shape of Test: 36,000
 
 # DEPLOYMENT IS DONE IN Streamlit
 ![image](https://user-images.githubusercontent.com/103564871/181836639-8854c631-6f0d-4b47-a46b-979e269ffd22.png)
@@ -99,13 +80,6 @@ Shape of Test: 36,000
 # CONCLUSION
 Good prediction results can be achieved with imbalanced datasets as well as with balanced ones. Decision Tree Classifier, Random Forest Classifier, XG Boost, Light GBM classifier, Ada Boost, and Bagging Classifier gave us the best results being able to detect more than 99.50% fraud transactions and at the same time not classifying some of non-fraud transactions as fraud. There is no perfect model It is up to the company and its objectives to decide which approach is the best in each particular situation.
 
-
-# GITHUB PROFILE LINK OF GROUP MEMBERS
-
-
-
-
-# THANK YOU
 
 
 
