@@ -3,7 +3,6 @@ import numpy as np
 import streamlit as st
 import json
 import requests as re
-from sklearn.ensemble import RandomForestClassifier
 import pickle
 import warnings
 warnings.filterwarnings("ignore")
